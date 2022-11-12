@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        sun: "#FFB701",
+        sun: "#F7D26C",
         whiter: "#F3F3F3",
-        tomato: "#EB0500",
+        peach: "#E594B9",
         darker: "#272729",
+        pome: "#F09181",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
+        pacifico: ["Pacifico", "sans-serif"],
       },
     },
   },

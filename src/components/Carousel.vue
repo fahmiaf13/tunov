@@ -1,3 +1,27 @@
+<script>
+import { Product } from "../constant/Menu";
+export default {
+  data() {
+    return {
+      active: 0,
+      menus: Product,
+    };
+  },
+  methods: {
+    nextSlide() {
+      if (this.active <= this.menus.length) {
+        this.active = this.active += 1;
+      }
+    },
+    prevSlide() {
+      if (this.active > 0) {
+        this.active = this.active + -1;
+      }
+    },
+  },
+};
+</script>
+
 <template>
   <ul>
     <li v-for="(menu, i) in menus" :style="{ backgroundImage: `url(${menu.img})`, backgroundColor: menu.hex }" role="button" :class="active === i ? 'active' : ''" @click="() => (active = i)" class="py-10 bg-origin-content">
@@ -9,7 +33,9 @@
             <p>
               {{ menu.color }}
             </p>
-            <button role="button" class="btn w-1/2 font-extrabold text-sm bg-sun text-darker border-sun hover:border-sun hover:bg-transparent hover:text-sun">MORE DETAILS</button>
+            <router-link :to="`/product/${menu.product}`">
+              <button role="button" class="btn w-1/2 font-extrabold text-sm bg-sun text-darker border-sun hover:border-sun hover:bg-transparent hover:text-sun">MORE DETAILS</button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -37,7 +63,7 @@ ul {
   min-height: 750px;
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   overflow: hidden;
   list-style-type: none;
   width: 100%;
@@ -180,27 +206,3 @@ h3 {
   }
 }
 </style>
-
-<script>
-import { Product } from "../constant/Menu";
-export default {
-  data() {
-    return {
-      active: 0,
-      menus: Product,
-    };
-  },
-  methods: {
-    nextSlide() {
-      if (this.active <= this.menus.length) {
-        this.active = this.active += 1;
-      }
-    },
-    prevSlide() {
-      if (this.active > 0) {
-        this.active = this.active + -1;
-      }
-    },
-  },
-};
-</script>

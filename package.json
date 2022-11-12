@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "case": "^1.6.3",
     "daisyui": "^2.33.0",
     "sass": "^1.55.0",
     "vue": "^3.2.37",
+    "vue-page-title": "^2.1.1",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
